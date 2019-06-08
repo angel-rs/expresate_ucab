@@ -2,6 +2,7 @@
   "main": "node_modules/expo/AppEntry.js",
   "private": true,
   "scripts": {
+    "start": "expo start",
     "test": "jest --watchAll",
     "postinstall": "rndebugger-open --expo"
   },

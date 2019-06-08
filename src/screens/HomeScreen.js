@@ -26,15 +26,10 @@ class HomeScreen extends React.Component {
         alignItems: 'center',
         justifyContent: 'center',
       }}>
-        <Text>
-        <Image
-          style={{
-            alignSelf: 'center',
-            flex: 1,
-          }}
-          resizeMode="contain"
-          source={Logo}
-         />
+        <Text style={{
+          fontWeight: '500',
+        }}>
+          Expresate UCAB
        </Text>
      </View>
     ),
