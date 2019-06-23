@@ -3,12 +3,18 @@ import {
   View,
   Text,
   StyleSheet,
+  YellowBox,
 } from 'react-native';
 import RootNavigation from './navigation/RootNavigation';
 import withProvider from './redux/withProvider'
 import { ActionSheetProvider, connectActionSheet } from '@expo/react-native-action-sheet';
 
 class AppView extends Component {
+  constructor(props) {
+    super(props);
+    YellowBox.ignoreWarnings(['ListView is deprecated']);
+  }
+
   render() {
     return (
       <ActionSheetProvider>

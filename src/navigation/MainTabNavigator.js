@@ -18,6 +18,7 @@ import CreatePostStack from './CreatePostStack';
 import ProfileStack from './ProfileStack';
 import UserAvatar from '../components/common/UserAvatar';
 
+import Colors from '../colors';
 
 const defaultNavigationOptions = {
   headerStyle: {
@@ -41,25 +42,17 @@ export default TabNavigator(
           name: 'home',
           size: 30,
         }),
-        headerLeft: (
+        headerLeft: (null
+        ),
+        headerRight: (
           <TouchableOpacity
+            activeOpacity={0.9}
             onPress={() => navigation.navigate("Photo")}
           >
             <InstaFont
               name="camera"
               size={30}
-              style={{marginLeft: 10, marginBottom: 10,}}
-            />
-          </TouchableOpacity>
-        ),
-        headerRight: (
-          <TouchableOpacity
-            onPress={() => {}}
-          >
-            <InstaFont
-              name="plane"
-              size={25}
-              style={{marginRight: 15, marginBottom: 10,}}
+              style={{ marginRight: 10, marginBottom: 0, color: Colors.actionColor }}
             />
           </TouchableOpacity>
         ),

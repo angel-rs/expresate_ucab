@@ -2,23 +2,19 @@
   "main": "node_modules/expo/AppEntry.js",
   "private": true,
   "scripts": {
-    "start": "expo start",
-    "test": "jest --watchAll",
-    "postinstall": "rndebugger-open --expo"
-  },
-  "jest": {
-    "preset": "jest-expo",
-    "setupTestFrameworkScriptFile": "./src/config/setupJest"
+    "start": "expo start"
   },
   "dependencies": {
     "@expo/react-native-action-sheet": "^1.0.2",
-    "@expo/samples": "2.1.1",
     "date-fns": "^1.29.0",
-    "expo": "26.0.0",
-    "react": "16.3.0-alpha.1",
-    "react-native": "https://github.com/expo/react-native/archive/sdk-26.0.0.tar.gz",
+    "expo": "^33.0.0",
+    "expo-asset": "^5.0.1",
+    "expo-constants": "^5.0.1",
+    "react": "16.8.3",
+    "react-native": "https://github.com/expo/react-native/archive/sdk-33.0.0.tar.gz",
     "react-native-expo-image-cache": "^3.0.3",
     "react-native-keyboard-aware-scroll-view": "^0.5.0",
+    "react-native-lightbox": "^0.8.0",
     "react-native-material-textfield": "^0.12.0",
     "react-navigation": "1.5.10",
     "react-redux": "^5.0.7",
@@ -31,10 +27,8 @@
   "devDependencies": {
     "babel-preset-es2015": "^6.24.1",
     "babel-preset-stage-2": "^6.24.1",
-    "detox": "^7.3.5",
-    "jest-expo": "^26.0.0",
-    "nyc": "^11.7.1",
-    "react-native-debugger-open": "^0.3.17",
-    "redux-testkit": "^1.0.6"
+    "eslint": "^6.0.0",
+    "eslint-config-airbnb": "^17.1.0",
+    "react-native-debugger-open": "^0.3.17"
   }
 }
