@@ -12,6 +12,7 @@ import {
   TouchableOpacity,
 } from 'react-native';
 import * as HomeActions from '../../actions/Home.actions';
+import { Ionicons, FontAwesome } from '@expo/vector-icons';
 
 import InstaFont from '../InstaFont';
 import FeedPost from './FeedPost';
@@ -56,9 +57,16 @@ class Feed extends Component {
     return (
       <Fragment>
         <View style={styles.header}>
-          <Text style={{ marginLeft: 10, fontWeight: 'bold' }} onPress={this.flipCard}>
-            X
-          </Text>
+          
+          <TouchableOpacity
+            style={{  marginLeft: 10, fontWeight: 'bold' }}
+            onPress={this.flipCard}>
+            <FontAwesome
+              name='map-marker'
+              size={28}
+              color='#545454'
+            />
+          </TouchableOpacity>
 
           <Text style={{ fontWeight: '500' }}>
             Expresate UCAB
@@ -66,7 +74,7 @@ class Feed extends Component {
 
           <TouchableOpacity
             activeOpacity={0.9}
-            // onPress={() => navigation.navigate("Photo")}
+            //onPress={() => navigation.navigate("Photo")}
           >
             <InstaFont
               name="camera"

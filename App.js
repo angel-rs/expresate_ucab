@@ -1,10 +1,13 @@
 import React from 'react';
-import { Platform, StatusBar, StyleSheet, View } from 'react-native';
+import { Platform, StatusBar, StyleSheet, View, Text } from 'react-native';
 import { AppLoading } from 'expo';
 import { Ionicons } from '@expo/vector-icons';
 import * as Font from 'expo-font';
 import { Asset } from 'expo-asset';
 import AppView from './src';
+import Login from './src/screens/formulario';
+
+
 
 export default class App extends React.Component {
   state = {
@@ -13,7 +16,7 @@ export default class App extends React.Component {
 
   render() {
     if (!this.state.isLoadingComplete && !this.props.skipLoadingScreen) {
-      return (
+      return ( 
         <AppLoading
           startAsync={this._loadResourcesAsync}
           onError={this._handleLoadingError}
@@ -24,7 +27,7 @@ export default class App extends React.Component {
       return (
         <View style={styles.container}>
           {Platform.OS === 'ios' && <StatusBar barStyle="default" />}
-          <AppView />
+          <AppView/>
         </View>
       );
     }
