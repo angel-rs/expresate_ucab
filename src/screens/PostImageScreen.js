@@ -16,13 +16,13 @@ import PostImageComponent from '../components/Post/PostImageComponent';
 const ShareImageScreenPointer = {}
 class ShareImageScreen extends Component {
   static navigationOptions = (props) => ({
-    title: 'Share To',
+    title: 'Compartir',
     headerBackTitle: 'Back',
     headerRight: (
       <TouchableOpacity
         onPress={() => ShareImageScreenPointer.this.postImage()}
       >
-        <Text style={styles.nextBtn}>Share</Text>
+        <Text style={styles.nextBtn}>Publicar</Text>
       </TouchableOpacity>
     ),
     headerLeft: (

@@ -4,10 +4,11 @@ import {
   Text,
   StyleSheet,
 } from 'react-native';
+import { Ionicons, FontAwesome } from '@expo/vector-icons';
 
-export default class SearchScreen extends Component {
+export default class LikesScreen extends Component {
   static navigationOptions = {
-    title: 'Search',
+    title: 'Buscar',
     headerStyle: {
       fontWeight: 'bold',
       fontSize: 18,
@@ -17,7 +18,8 @@ export default class SearchScreen extends Component {
   render() {
     return (
       <View style={styles.container}>
-        <Text>SearchScreen component</Text>
+        <FontAwesome name="search" size={100} color='rgba(0, 9, 0, 0.12)'/>
+        <Text style={{fontWeight: 'bold', color:'rgba(0, 9, 0, 0.22)' }}>No hay nada aun...¡Regresa mas tarde!</Text>
       </View>
     );
   }

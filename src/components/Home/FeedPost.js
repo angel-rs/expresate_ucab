@@ -6,9 +6,11 @@ import {
   StyleSheet,
   Image,
   Dimensions,
+  TouchableOpacity
 } from 'react-native';
 import {Image as ImageWithCache} from "react-native-expo-image-cache";
 import {colors} from '../../config/Theme';
+import { Ionicons, FontAwesome } from '@expo/vector-icons';
 
 import InstaFont from '../InstaFont';
 import Comments from './Comments';
@@ -17,6 +19,22 @@ import ImageComponent from '../common/ImageComponent';
 const win = Dimensions.get('window');
 
 export default class FeedPost extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      showPass: true,
+      press: false,
+    };
+  }
+  
+  showPass() {
+    if (this.state.press == false) {
+      this.setState({ press: true, showPass: false });
+    } else {
+      this.setState({ press: false, showPass: true });
+    }
+  }
+  
   render() {
     const { data } = this.props;
     const author = this.props.users.filter( user => user.id === data.authorId)[0] || {}
@@ -77,21 +95,21 @@ export default class FeedPost extends Component {
             <View
               style={styles.likeBtn}
             >
-              <InstaFont
-                name={isPostLiked ? "heart" : "heart-o"}
-                style={isPostLiked ? styles.liked : styles.notLiked}
-                size={isPostLiked ? 32 : 40}
-              />
+              <TouchableOpacity onPress={this.showPass.bind(this)}>
+                <FontAwesome
+                  name={this.state.press == false ? 'thumbs-o-up' : 'thumbs-down'}
+                  size={35}
+                  color='black'
+                />
+              </TouchableOpacity>
             </View>
 
-            <InstaFont
-              name="bubble-o"
-              size={30}
-            />
-            <InstaFont
-              name="plane-o"
-              size={40}
-            />
+            <TouchableOpacity>
+              <InstaFont
+                name="bubble-o"
+                size={30}
+              />
+            </TouchableOpacity>
           </View>
 
           <Text style={styles.likes}>{data.likes.length} likes</Text>

@@ -18,7 +18,7 @@ import EditProfileForm from '../components/EditProfile/EditProfileForm';
 const ScreenPointer = {}
 class EditProfileScreen extends Component {
   static navigationOptions = (props) => ({
-    title: 'Edit Profile',
+    title: 'Editar Perfil',
     headerBackTitle: 'Back',
     headerRight: (
       <TouchableOpacity

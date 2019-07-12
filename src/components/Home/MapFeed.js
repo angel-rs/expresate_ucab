@@ -2,6 +2,7 @@ import React, { Component, Fragment } from 'react';
 import { MapView } from 'expo';
 import { connect } from 'react-redux';
 import Constants from 'expo-constants';
+import { Ionicons, FontAwesome } from '@expo/vector-icons';
 import {
   ScrollView,
   StyleSheet,
@@ -9,8 +10,10 @@ import {
   View,
   ActivityIndicator,
   FlatList,
+  Image
 } from 'react-native';
 import * as HomeActions from '../../actions/Home.actions';
+import SoyelMapa from '../../screens/soyelmapa';
 
 import FeedPost from './FeedPost';
 import { colors } from '../../config/Theme';
@@ -44,11 +47,19 @@ class MapFeed extends Component {
     return (
       <Fragment>
         <View style={styles.header}>
-          <Text onPress={this.flipCard}>
-            flip
-          </Text>
+          <View style = {{flexDirection: 'row'}}>  
+            <FontAwesome
+              name='arrow-left' 
+              size={35}
+              color='#545454'
+              onPress={this.flipCard}
+            />
+            <View style = {{marginLeft: '80%'}}>
+              <Image source = {require('../../../assets/images/ucablogoxd.png')} style = {{width: 30, height: 32}}/>
+            </View>
+          </View>
+          <SoyelMapa />
         </View>
-        <MapView />
       </Fragment>
     );
   }
@@ -58,8 +69,8 @@ class MapFeed extends Component {
 const styles = StyleSheet.create({
   header: {
     width: '100%',
-    height: 75,
-    paddingTop: Constants.statusBarHeight,
+    height: 50,
+    marginTop: Constants.statusBarHeight,
   },
   containerFull: {
     flex: 1,

@@ -39,7 +39,7 @@ export default class Comments extends Component {
             style={styles.avatar}
             source={{uri: this.props.userAvatar}}
           />
-          <Text style={styles.addCommentBtn}>Add a comment....</Text>
+          <Text style={styles.addCommentBtn}>Añadir comentario....</Text>
         </View>
       </View>
     );

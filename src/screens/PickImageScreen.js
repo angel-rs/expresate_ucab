@@ -13,7 +13,7 @@ import DeviceGallery from '../components/Post/DeviceGallery';
 
 class PickImageScreen extends Component {
   static navigationOptions = {
-    title: 'Gallery',
+    title: 'Galeria',
     headerStyle: {
       fontWeight: 'bold',
       fontSize: 18,

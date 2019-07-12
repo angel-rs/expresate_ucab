@@ -50,7 +50,7 @@ class EditAvatar extends Component {
           />
 
           {this.props.editProfileScreen &&
-            <Text style={styles.changeText}>Change Photo</Text>
+            <Text style={styles.changeText}>Cambiar foto</Text>
           }
 
           {!this.props.editProfileScreen &&

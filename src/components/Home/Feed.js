@@ -1,4 +1,5 @@
 import React, { Component, Fragment } from 'react';
+import {Image} from 'react-native';
 import uuidv4 from 'uuid/v4';
 import {connect} from 'react-redux';
 import Constants from 'expo-constants';
@@ -10,6 +11,7 @@ import {
   ActivityIndicator,
   FlatList,
   TouchableOpacity,
+  Alert
 } from 'react-native';
 import * as HomeActions from '../../actions/Home.actions';
 import { Ionicons, FontAwesome } from '@expo/vector-icons';
@@ -68,18 +70,17 @@ class Feed extends Component {
             />
           </TouchableOpacity>
 
-          <Text style={{ fontWeight: '500' }}>
-            Expresate UCAB
-          </Text>
+          <Image source = {require('../../../assets/images/ucablogoxd.png')} style = {{width: 30, height: 32}}/>
 
           <TouchableOpacity
             activeOpacity={0.9}
-            //onPress={() => navigation.navigate("Photo")}
+            style={{  marginRight: 8 , fontWeight: 'bold' }}
+            onPress = {() => Alert.alert('Version: 1.0 ')}
           >
-            <InstaFont
-              name="camera"
-              size={30}
-              style={{ marginRight: 10, marginBottom: 0, color: '#4d4d4d' }}
+            <FontAwesome
+              name='info-circle'
+              size={28}
+              color='#545454'
             />
           </TouchableOpacity>
         </View>

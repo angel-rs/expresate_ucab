@@ -62,7 +62,7 @@ export default class UserProfile extends Component {
                 style={styles.editBtn}
                 onPress={this.editProfileHandler}
               >
-                <Text style={styles.editBtnText}>Edit Profile</Text>
+                <Text style={styles.editBtnText}>Editar Perfil</Text>
               </TouchableOpacity>
             </View>
 

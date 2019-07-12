@@ -2,10 +2,12 @@ import React from 'react';
 import {
   Platform,
   TouchableOpacity,
-  Text,
+  Image,
+  View
 } from 'react-native';
 import { Entypo } from '@expo/vector-icons';
 import { TabNavigator, TabBarBottom } from 'react-navigation';
+import { Ionicons } from '@expo/vector-icons';
 
 import { colors } from '../config/Theme';
 import InstaFont from '../components/InstaFont';
@@ -65,7 +67,12 @@ export default TabNavigator(
         tabBarIcon: createTabBarIconWrapper(InstaFont, {
           name: 'search',
           size: 45,
-        })
+        }),
+        headerLeft: (
+          <View style = {{marginLeft: 22}}>
+            <Image source = {require('../../assets/images/ucablogoxd.png')} style = {{width: 30, height: 32}}/>
+          </View>
+        ),
       },
     },
     CreatePost: {
@@ -73,10 +80,7 @@ export default TabNavigator(
       navigationOptions: {
         ...defaultNavigationOptions,
         tabBarVisible: false,
-        tabBarIcon: createTabBarIconWrapper(Entypo, {
-          name: 'squared-plus',
-          size: 40,
-        })
+        tabBarIcon: <Image source={require('../../assets/images/logillomain.png')} style={{ width: 45, height: 45 }} />
       },
     },
     Likes: {
@@ -86,7 +90,12 @@ export default TabNavigator(
         tabBarIcon: createTabBarIconWrapper(InstaFont, {
           name: 'heart',
           size: 25,
-        })
+        }),
+        headerLeft: (
+          <View style = {{marginLeft: 22}}>
+            <Image source = {require('../../assets/images/ucablogoxd.png')} style = {{width: 30, height: 32}}/>
+          </View>
+        ),
       },
     },
     Profile: {
@@ -94,6 +103,11 @@ export default TabNavigator(
       navigationOptions: {
         ...defaultNavigationOptions,
         tabBarIcon: (<UserAvatar />),
+        headerLeft: (
+          <View style = {{marginLeft: 22}}>
+            <Image source = {require('../../assets/images/ucablogoxd.png')} style = {{width: 30, height: 32}}/>
+          </View>
+        ),
       },
     },
   },

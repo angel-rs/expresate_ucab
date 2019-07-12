@@ -26,7 +26,7 @@ export default class PostImageComponent extends Component {
             value={this.props.caption}
             blurOnSubmit={true}
             underlineColorAndroid={"transparent"}
-            placeholder="Write a caption..."
+            placeholder="Expresate..."
             multiline={true}
             blurOnSubmit={true}
           />

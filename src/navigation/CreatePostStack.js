@@ -68,7 +68,7 @@ const CreateImageTabs = TabNavigator(
         <TouchableOpacity
           onPress={() => navigation.navigate('PostImage')}
         >
-          <Text style={styles.nextBtn}>Next</Text>
+          <Text style={styles.nextBtn}>Siguente</Text>
         </TouchableOpacity>
       ),
     }),

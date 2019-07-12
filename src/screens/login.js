@@ -34,16 +34,6 @@ export default class LoginClass extends React.Component {
     }
   }
 
-  verificarDatos() {
-    const usuario = 'prop';
-
-    if (usuario == 'admin') {
-      this.props.navigation.navigate('AdminSid');
-    } else {
-      this.props.navigation.navigate('PropSid');
-    }
-  }
-
   render() {
     return (
       <ImageBackground source={require('../../assets/images/fondo.png')} style={styles.container}>
@@ -64,7 +54,7 @@ export default class LoginClass extends React.Component {
             {/* Ingresar usuario*/}
             <TextInput
               style={{
-                width: '83%',
+                width: '80%',
                 borderBottomColor: '#545454',
                 borderBottomWidth: 1,
                 marginLeft: '3%',
@@ -73,46 +63,44 @@ export default class LoginClass extends React.Component {
               }}
             />
           </View>
+    
+            {/* Contraseña*/}
+            <View style={{ flexDirection: 'row' }}>
+              <Text style={{ color: '#545454', fontSize: 10, marginTop: '7%' }}>
+                CONTRASEÑA
+              </Text>
+              
+            </View>
 
-
-          {/* Contraseña*/}
-          <View style={{ flexDirection: 'row' }}>
-            <Text style={{ color: '#545454', fontSize: 10, marginTop: '7%' }}>
-              CONTRASEÑA
-            </Text>
-
-            {/* Mostrar contraseña*/}
-            <TouchableOpacity
-              style={{ marginTop: '6.8%', marginLeft: '60%' }}
-              onPress={this.showPass.bind(this)}>
-              <FontAwesome
-                name={this.state.press == false ? 'eye' : 'eye-slash'}
-                size={25}
-                color='#545454'
+            <View style={{ flexDirection: 'row', marginTop: '5%' }}>
+              <FontAwesome name="lock" size={25} color='#545454' />
+              {/* Ingresar Contraseña*/}
+              <TextInput
+                style={{
+                  width: '80%',
+                  borderBottomColor: '#545454',
+                  borderBottomWidth: 1,
+                  marginLeft: '3%',
+                  fontSize: 18,
+                  color: '#545454',
+                }}
+                secureTextEntry={this.state.showPass}
               />
-            </TouchableOpacity>
-          </View>
-
-          <View style={{ flexDirection: 'row', marginTop: '5%' }}>
-            <FontAwesome name="lock" size={25} color='#545454' />
-            {/* Ingresar Contraseña*/}
-            <TextInput
-              style={{
-                width: '83%',
-                borderBottomColor: '#545454',
-                borderBottomWidth: 1,
-                marginLeft: '3%',
-                fontSize: 18,
-                color: '#545454',
-              }}
-              secureTextEntry={this.state.showPass}
-            />
-          </View>
+              {/* Mostrar contraseña*/}
+              <TouchableOpacity
+                onPress={this.showPass.bind(this)}>
+                <FontAwesome
+                  name={this.state.press == false ? 'eye' : 'eye-slash'}
+                  size={25}
+                  color='#545454'
+                />
+              </TouchableOpacity>
+            </View>
         </View>
 
         {/* Boton de ingreso*/}
         <View style={{ marginTop: '6%', marginLeft: 260}}>
-          <TouchableOpacity>
+          <TouchableOpacity  onPress = { () => this.props.navigation.navigate('Main')}>
             <View style= {{width: 85, height: 48, backgroundColor: '#545454', justifyContent: 'center', alignItems: 'center', borderRadius: 10}}>
               <Text style = {{fontSize: 15, color: 'white'}}>Ingresar</Text>
             </View>
@@ -127,7 +115,9 @@ export default class LoginClass extends React.Component {
           />
         </View>
 
-        <TouchableOpacity style = {{ alignItems: 'center', justifyContent: 'center'}}>  
+        <TouchableOpacity style = {{ alignItems: 'center', justifyContent: 'center'}} onPress = { () => 
+          this.props.navigation.navigate('Registro')
+        }>  
           <Text style={{ color: '#545454', fontSize: 18, fontWeight: 'bold' }}>
           - Registro -
           </Text>

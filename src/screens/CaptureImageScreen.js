@@ -11,7 +11,7 @@ import CameraComponent from '../components/Post/Camera';
 
 class CaptureImageScreen extends React.Component {
   static navigationOptions = {
-    title: 'Photo',
+    title: 'Foto',
   };
 
   render() {
